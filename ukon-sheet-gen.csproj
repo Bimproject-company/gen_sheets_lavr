@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\bimproject\Desktop\ukon-sheet-gen_all ver\ukon-sheet-gen_19_final\ukon-sheet-gen.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A693FCB-E010-4B34-A6D6-C9121A06F2CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ukon-sheet-gen</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>SheetGen</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>lib\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Text.Json">
+      <HintPath>lib\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\UIBuilder.cs" />
+    <Compile Include="UI\Ribbon.cs" />
+    <Compile Include="UI\SubPanel.cs" />
+    <Compile Include="UI\ProjectEnvironment\SettingsGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\TransactionSettings.cs" />
+    <Compile Include="Settings\AddinSettings.cs" />
+    <Compile Include="Settings\SelectionType.cs" />
+    <Compile Include="Selector\SingleSelection.cs" />
+    <Compile Include="Selector\MultipleSelection.cs" />
+    <Compile Include="Selector\CropboxSelection.cs" />
+    <Compile Include="Selector\AllElementsSelection.cs" />
+    <Compile Include="Selector\ISelection.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Drawings\DrawingBuilder.cs" />
+    <Compile Include="Drawings\Transformation\ArcStoneTransformation.cs" />
+    <Compile Include="Drawings\Transformation\ContextStoneTransformation.cs" />
+    <Compile Include="Drawings\Transformation\ITransformation.cs" />
+    <Compile Include="Drawings\Transformation\RegularStoneTranformation.cs" />
+    <Compile Include="Drawings\Models\ParameterModel.cs" />
+    <Compile Include="Drawings\Models\SheetModel.cs" />
+    <Compile Include="Drawings\Models\ViewModel.cs" />
+    <Compile Include="Drawings\Factory\ToppingSheetFactory.cs" />
+    <Compile Include="Drawings\Factory\CeilingSheetFactory.cs" />
+    <Compile Include="Drawings\Factory\IFactory.cs" />
+    <Compile Include="Drawings\Factory\CarniceSheetFactory.cs" />
+    <Compile Include="Commands\GenerateSheetsOnly.cs" />
+    <Compile Include="Commands\Generate.cs" />
+    <Compile Include="Commands\GenerateAssembliesOnly.cs" />
+    <Compile Include="Commands\Settings.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="UI\ProjectEnvironment\SettingsGUI.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
